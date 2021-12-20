@@ -1,11 +1,3 @@
-# Update on RemoteDebug iOS WebKit Adapter
-
-RemoteDebug is now superseeded by https://inspect.dev/ – a new developer tool for macOS and Windows to inspect and debug your web apps and websites in Safari and WebViews on iOS devices 🤯🎉🔥 
-
-<p><strong>Maintenance status:</strong> RemoteDebug iOS WebKit Adapter is not proactively maintained or extended.
-
-<details><summary>Original readme</summary>
-    
 ## RemoteDebug iOS WebKit Adapter
 
 RemoteDebug iOS WebKit Adapter is an protocol adapter that Safari and WebViews on iOS to be debugged from tools like VS Code, Chrome DevTools, Mozilla Debugger.html and other tools compatible with the Chrome Debugging Protocol.
