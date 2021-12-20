@@ -9,6 +9,11 @@ Navigate to the ios-webkit-debug-proxy folder and unzip the files straight into 
 4. Connect your editor to the Chrome or Firefox debugger (VSCode or whatever you use)
 
 
+Thanks to the RemoteDebug project and bdice.
+https://remotedebug.org/
+https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter
+https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter/issues/79#issuecomment-351472710
+
 ## Usage
 ### Usage with Chrome (Canary) and Chrome DevTools
 
