@@ -3,8 +3,46 @@
 As of 2021-12-20 this fork primarily introduces a fix for Windows.
 Navigate to the ios-webkit-debug-proxy folder and unzip the files straight into the directory.
 
-Then run npm install, npm start in the root folder.
+1. npm install
+2. npm run (default port is 9000)
+3. Open Chrome or Firefox and follow usage instructions just below (may need iTunes and iPhone plugged in by USB but unsure)
+4. Connect your editor to the Chrome or Firefox debugger (VSCode or whatever you use)
 
+
+## Usage
+### Usage with Chrome (Canary) and Chrome DevTools
+
+You can have your iOS targets show up in Chrome's `chrome://inspect` page by leveraging the new network discoverbility feature where you simple add the IP of computer running the adapter ala `localhost:9000`.
+
+![](.readme/chrome_inspect.png)
+
+### Using with Mozilla debugger.html
+
+You can have your iOS targets show up in [Mozila debugger.html](https://github.com/devtools-html/debugger.html), by starting `remotedebug_ios_webkit_adapter --port=9222` and selecting the Chrome tab.
+
+![](.readme/debugger_html.png)
+
+### Using with Microsoft VS Code
+
+Install [VS Code](https:/code.visualstudio.com), and the [VS Code Chrome Debugger](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), then create a `launch.json` configuration where `port` is set to 9000, like below:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "iOS Web",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9000,
+            "url": "http://localhost:8080/*",
+            "webRoot": "${workspaceRoot}/src"
+        }
+    ]
+}
+```
+
+----
 RemoteDebug iOS WebKit Adapter is an protocol adapter that Safari and WebViews on iOS to be debugged from tools like VS Code, Chrome DevTools, Mozilla Debugger.html and other tools compatible with the Chrome Debugging Protocol.
 
 ![](.readme/overview.png)
@@ -83,39 +121,6 @@ Options:
   -p, --port  the adapter listening port  [default: 9000]
   --version   prints current version
 
-```
-
-## Usage
-### Usage with Chrome (Canary) and Chrome DevTools
-
-You can have your iOS targets show up in Chrome's `chrome://inspect` page by leveraging the new network discoverbility feature where you simple add the IP of computer running the adapter ala `localhost:9000`.
-
-![](.readme/chrome_inspect.png)
-
-### Using with Mozilla debugger.html
-
-You can have your iOS targets show up in [Mozila debugger.html](https://github.com/devtools-html/debugger.html), by starting `remotedebug_ios_webkit_adapter --port=9222` and selecting the Chrome tab.
-
-![](.readme/debugger_html.png)
-
-### Using with Microsoft VS Code
-
-Install [VS Code](https:/code.visualstudio.com), and the [VS Code Chrome Debugger](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), then create a `launch.json` configuration where `port` is set to 9000, like below:
-
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "iOS Web",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9000,
-            "url": "http://localhost:8080/*",
-            "webRoot": "${workspaceRoot}/src"
-        }
-    ]
-}
 ```
 
 ## Architecture
