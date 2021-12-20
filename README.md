@@ -1,5 +1,10 @@
 ## RemoteDebug iOS WebKit Adapter
 
+As of 2021-12-20 this fork primarily introduces a fix for Windows.
+Navigate to the ios-webkit-debug-proxy folder and unzip the files straight into the directory.
+
+Then run npm install, npm start in the root folder.
+
 RemoteDebug iOS WebKit Adapter is an protocol adapter that Safari and WebViews on iOS to be debugged from tools like VS Code, Chrome DevTools, Mozilla Debugger.html and other tools compatible with the Chrome Debugging Protocol.
 
 ![](.readme/overview.png)
