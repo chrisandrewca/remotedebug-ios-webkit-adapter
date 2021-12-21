@@ -40,3 +40,8 @@ process.on('SIGTERM', function () {
     server.stop();
     process.exit();
 });
+
+process.on('unhandledRejection', (reason, promise) => {
+
+    console.trace({ unhandledRejection: reason, now: Date.now(), promise });
+});

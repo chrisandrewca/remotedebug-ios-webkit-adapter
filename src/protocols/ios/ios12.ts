@@ -13,6 +13,8 @@ export class IOS12Protocol extends IOS9Protocol {
     private onTargetCreated(msg: any): Promise<any> {
         this._target.targetId = msg.params.targetInfo.targetId;
 
+        console.log({ now: Date.now(), msg });
+
         return Promise.resolve(msg);
     }
 }
